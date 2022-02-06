@@ -6,11 +6,8 @@ def WordSearch(len: int, s: str, subs: str) -> list:
 
     # begin format with 0 position
     start = 0
-    finish = start
 
-    while (s.count('') - 1) - start >= len:
-        start = finish
-
+    while (s.count('') - 1) - start >= 0:
         # delete space in beginning of line
         if s[start] == ' ':
             start += 1
@@ -25,9 +22,11 @@ def WordSearch(len: int, s: str, subs: str) -> list:
         lines.append(s[start:finish])
 
         # check if subs
-        if s[start - 1:finish + 1].count(' ' + subs + ' '):
+        if s[start:finish + 1].count(subs + ' '):
             res.append(1)
         else:
             res.append(0)
+
+        start = finish
 
     return res
