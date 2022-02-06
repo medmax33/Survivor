@@ -1,4 +1,4 @@
-def wordsearch(line_width: int, s: str, subs: str) -> list:
+def WordSearch(line_width: int, s: str, subs: str) -> list:
     # create array of '0' and '1' for lines with 'subs'
     res = []
 
