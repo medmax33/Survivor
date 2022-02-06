@@ -23,7 +23,6 @@ def WordSearch(len: int, s: str, subs: str) -> list:
 
         # add new formatted line
         lines.append(s[start:finish])
-        print(lines)
 
         # check if subs
         if s[start:finish + 1].count(subs + ' '):
