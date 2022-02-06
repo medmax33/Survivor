@@ -7,7 +7,7 @@ def WordSearch(len: int, s: str, subs: str) -> list:
     # begin format with 0 position
     start = 0
 
-    while (s.count('') - 1) - start >= 0:
+    while (s.count('') - 1) - start > 0:
         # delete space in beginning of line
         if s[start] == ' ':
             start += 1
@@ -18,8 +18,12 @@ def WordSearch(len: int, s: str, subs: str) -> list:
         else:
             finish = s.rfind(' ', start, start + len)
 
+        if finish > (s.count('') - 1):
+            finish = (s.count('') - 1)
+
         # add new formatted line
         lines.append(s[start:finish])
+        print(lines)
 
         # check if subs
         if s[start:finish + 1].count(subs + ' '):
