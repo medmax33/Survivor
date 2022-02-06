@@ -1,5 +1,5 @@
 def WordSearch(len: int, s: str, subs: str) -> list:
-    # create array for formated lines
+    # create array for formatted lines
     lines = []
     # create array of '0' and '1' for lines with 'subs'
     res = []
