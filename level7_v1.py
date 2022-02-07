@@ -1,30 +1,35 @@
 def WordSearch(line_width: int, s: str, subs: str) -> list:
-    # create array of '0' and '1' for lines with 'subs'
-    res = []
 
-    # begin format with 0 position
-    start = 0
+    # split s array in list
+    s_list: list = list(s.split())
 
-    while len(s) - start > 0:
-        # delete space in beginning of line
-        if s[start] == ' ':
-            start += 1
+    line: list = []
+    result: list = []
+    average: str = ''
 
-        # check if in 'len' line is more of one word
-        if s.count(' ', start, start + line_width) == 0:
-            finish = start + line_width
+    # split all words in array that more than line_width
+    for i in range(len(s_list)):
+        if len(s_list[i]) > line_width:
+            k = s_list[i]
+            s_list.insert(i, k[line_width:])
+            s_list.insert(i, k[:line_width] + '-')
+            s_list.remove(k)
+
+    # join words into lines and check subs
+    for i in range(len(s_list)):
+        if len(average + s_list[i]) <= line_width + 1:
+            average += s_list[i] + ' '
         else:
-            finish = s.rfind(' ', start, start + line_width)
+            line.append(average)
+            average = s_list[i] + ' '
+    line.append(average)
 
-        if finish > len(s):
-            finish = len(s)
-
-        # check if subs
-        if s[start:finish + 1].count(subs + ' '):
-            res.append(1)
+    # find subs only separated by spaces, or/and in beginning
+    # all subs check in lowercase
+    for li in line:
+        if li.lower().startswith(subs.lower() + ' ') or ' ' + subs.lower() + ' ' in li:
+            result.append(1)
         else:
-            res.append(0)
+            result.append(0)
 
-        start = finish
-
-    return res
+    return result
