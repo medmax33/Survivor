@@ -1,5 +1,4 @@
 import unittest
-# import random
 from level7_v1 import WordSearch
 
 
@@ -16,7 +15,7 @@ class MyTests(unittest.TestCase):
         self.assertEqual(WordSearch(10, '12345', 'subs'), [0])
 
     def test_3_12345(self):
-        self.assertEqual(WordSearch(3, '12345', '123'), [0, 0])
+        self.assertEqual(WordSearch(3, '12345', '123'), [1, 0])
 
     def test_long(self):
         self.assertEqual(WordSearch(15, self.phrase_2, 'форматирования'), [0, 0, 0, 1, 0, 0, 0, 0, 0, 0])

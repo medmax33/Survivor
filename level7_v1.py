@@ -11,8 +11,8 @@ def WordSearch(line_width: int, s: str, subs: str) -> list:
     for i in range(len(s_list)):
         if len(s_list[i]) > line_width:
             k = s_list[i]
-            s_list.insert(i, k[line_width:])
-            s_list.insert(i, k[:line_width] + '-')
+            for j in range(round(len(s_list[i]) / line_width + 0.5)):
+                s_list.insert(i + j, k[line_width * j:line_width * (j + 1)])
             s_list.remove(k)
 
     # join words into lines and check subs
