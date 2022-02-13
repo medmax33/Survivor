@@ -38,7 +38,8 @@ def encrypting(s: str) -> str:
             if array[i][j] == ' ':
                 continue
             encrypt += array[i][j]
-        encrypt += ' '
+        if j != column - 1:
+            encrypt += ' '
 
     return encrypt
 
