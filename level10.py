@@ -18,8 +18,6 @@ def PrintingCosts(line: str) -> int:
                   'z': 19, '{': 18, '|': 12, '}': 18, '~': 9}
     toner = 0
     for _ in line:
-        print(_)
-        print(dictionary.get(_, 23))
         toner += dictionary.get(_, 23)
 
     return toner
