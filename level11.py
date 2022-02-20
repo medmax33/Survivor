@@ -1,5 +1,5 @@
 def BigMinus(s1: str, s2: str) -> str:
-    if len(s2) > len(s1):
+    if s2 > s1:
         s1, s2 = s2, s1
     index = len(s1)
     s2 = s2.rjust(index, '0')
