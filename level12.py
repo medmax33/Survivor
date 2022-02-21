@@ -1,6 +1,7 @@
 def MassVote(n: int, votes: list) -> str:
+
     # check if n equal len votes
-    if n != len(votes):
+    if n != len(votes) or n < 1:
         return 'n doesn\'t fit length of votes'
 
     # try to calculate total votes
