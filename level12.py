@@ -8,9 +8,15 @@ def MassVote(n: int, votes: list) -> str:
     try:
         total_votes = 0
         for _ in votes:
+            if _ < 0:
+                return 'one of the vote is negative'
             total_votes += _
     except TypeError:
         return 'check data in votes'
+
+    # check if all votes are zero
+    if total_votes == 0:
+        return 'no winner'
 
     # calculate list of percentage of each candidate
     percentage = []
