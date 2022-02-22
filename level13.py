@@ -4,7 +4,7 @@ def UFO(n: int, data: list, octal: bool) -> list:
         if n != len(data):
             return [0]
 
-        result = []
+        result: list = []
         for _ in data:
             if octal:
                 result.append(int(str(_), 8))
