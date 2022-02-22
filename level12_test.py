@@ -18,6 +18,9 @@ class MyTests(unittest.TestCase):
             votes.append(random.randint(1, 100))
         self.assertEqual(MassVote(n, votes), 'minority winner 1')
 
+    def test_one_candidate(self):
+        self.assertEqual(MassVote(1, [50]), 'majority winner 1')
+
 
 if __name__ == '__main__':
     unittest.main()
