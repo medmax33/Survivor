@@ -39,6 +39,3 @@ def DefArray(i: int, j: int, array1: list, array2: list) -> bool:
         if array2[_] != array1[i + _][j:j + len(array2[_])]:
             return False
     return True
-
-
-print(TankRush(3, 4, '1234 2345 0987', 2, 2, '34 98'))
