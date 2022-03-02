@@ -16,17 +16,14 @@ def TankRush(h1: int, w1: int, s1: str, h2: int, w2: int, s2: str) -> bool:
         assert w1 == len(array1[0]), 'w1 not equal len s1'
         assert w2 == len(array2[0]), 'w2 not equal len s2'
 
-        # if h2 == 0 or w2 == 0:
-        #     return True
-
         # find indexes of first line array2 in array1
         for i in range(len(array1) - len(array2) + 1):
-            if array2[0] in array1[i]:
-                j = array1[i].index(array2[0])
-                if DefArray(i, j, array1, array2):
-                    return True
-            else:
-                continue
+            for j in range(len(array1[i]) - len(array2[i]) + 1):
+                if array2[0] == array1[i][j:j + len(array2[i])]:
+                    if DefArray(i, j, array1, array2):
+                        return True
+                else:
+                    continue
 
         return False
 
