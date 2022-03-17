@@ -19,9 +19,14 @@ def ShopOLAP(n: int, items: list) -> list:
 
     split_items = sorted(reverse_items(split_items), reverse=True)
 
-    for i in range(1, len(split_items)):
+
+    i = 1
+    while i < len(split_items):
         if split_items[i - 1][0] == split_items[i][0] and split_items[i - 1][1] > split_items[i][1]:
             split_items.insert(i - 1, split_items.pop(i))
+            i = 1
+        else:
+            i += 1
 
     split_items = reverse_items(split_items)
 
