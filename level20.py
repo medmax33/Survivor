@@ -76,5 +76,4 @@ def BastShoe(command: str) -> str:
         return new_line.current()
 
 
-if __name__ != '__main__':
-    new_line = History()
+new_line = History()
