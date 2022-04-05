@@ -1,9 +1,7 @@
-def MatrixTurn(Matrix: list, m: int, n: int, t: int) -> type(None):
-
+def MatrixTurn(Matrix: list, m: int, n: int, t: int) -> None:
+    ccc = Matrix
     for _ in range(t):
-        Matrix = matrix_rotation(m, n, Matrix)
-
-    # return None
+        ccc = matrix_rotation(m, n, ccc)
 
 
 def matrix_rotation(h: int, w: int, tree: list) -> list:
@@ -24,6 +22,6 @@ def matrix_rotation(h: int, w: int, tree: list) -> list:
                 new_tree[i + 1][j + 0] = tree[i][j]
 
     for i in range(h):
-        new_tree[i] = ''.join(new_tree[i])
+        tree[i] = ''.join(new_tree[i])
 
-    return new_tree
+    return tree
