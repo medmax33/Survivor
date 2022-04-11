@@ -2,8 +2,6 @@ def TransformTransform(a: list, n: int) -> bool:
 
     if n != len(a):
         return False
-    print(Transform(Transform(a)))
-    print(sum(Transform(Transform(a))))
 
     keykey = sum(Transform(Transform(a)))
 
