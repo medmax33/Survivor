@@ -16,7 +16,7 @@ def Football(f: list, n: int) -> bool:
                 m.append(0)
 
         if len(k) == 0:
-            return True
+            return False
         elif len(k) == 2:
             return True
         elif len(k) > 2 and 0 not in m[k[0]:k[-1]]:
